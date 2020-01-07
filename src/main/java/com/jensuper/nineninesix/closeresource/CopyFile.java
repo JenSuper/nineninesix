@@ -20,7 +20,9 @@ public class CopyFile {
      */
     @Test
     public void test() {
-
+        /**
+         * 将需要关闭的流创建在 try 小括号内
+         */
         try (
                 FileOutputStream fileOutputStream =
                         new FileOutputStream(new File("F:\\java\\projects\\myself\\nineninesix\\target\\CopyFile.txt"));
