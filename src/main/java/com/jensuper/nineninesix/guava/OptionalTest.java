@@ -2,8 +2,6 @@ package com.jensuper.nineninesix.guava;
 
 import org.junit.Test;
 
-import javax.xml.bind.SchemaOutputResolver;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
