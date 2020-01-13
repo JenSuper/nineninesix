@@ -4,7 +4,6 @@ import com.google.common.collect.ImmutableMultiset;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import org.junit.Test;
-import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -12,7 +11,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * @author jichao
+ * @author JenSuper
  * @version V1.0
  * @description: 集合
  * @date 2020/01/07

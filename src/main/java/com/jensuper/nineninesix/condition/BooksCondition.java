@@ -4,7 +4,7 @@ import com.jensuper.nineninesix.entity.Sku;
 import com.jensuper.nineninesix.enums.SkuCategoryEnum;
 
 /**
- * @author jichao
+ * @author JenSuper
  * @version V1.0
  * @description:
  * @date 2019/12/26

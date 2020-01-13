@@ -3,7 +3,7 @@ package com.jensuper.nineninesix.enums;
 import lombok.Getter;
 
 /**
- * @author jichao
+ * @author JenSuper
  * @version V1.0
  * @description: 商品类型枚举
  * @date 2019/12/26

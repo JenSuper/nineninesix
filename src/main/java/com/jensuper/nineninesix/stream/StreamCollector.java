@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
- * @author jichao
+ * @author JenSuper
  * @version V1.0
  * @description: lambda编程，对集合的操作
  * @date 2019/12/29

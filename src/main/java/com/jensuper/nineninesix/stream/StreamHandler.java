@@ -10,7 +10,7 @@ import java.util.Comparator;
 import java.util.OptionalDouble;
 
 /**
- * @author jichao
+ * @author JenSuper
  * @version V1.0
  * @description: 流式编程 1. 对集合的操作
  * @date 2019/12/29

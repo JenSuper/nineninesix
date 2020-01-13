@@ -3,7 +3,7 @@ package com.jensuper.nineninesix.entity;
 import lombok.Data;
 
 /**
- * @author jichao
+ * @author JenSuper
  * @version V1.0
  * @description: 下单商品
  * @date 2019/12/26

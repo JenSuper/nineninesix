@@ -7,7 +7,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
 /**
- * @author jichao
+ * @author JenSuper
  * @version V1.0
  * @description: 优雅的关闭流资源
  * @date 2020/01/04

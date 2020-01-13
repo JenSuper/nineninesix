@@ -8,7 +8,7 @@ import java.util.List;
 
 
 /**
- * @author jichao
+ * @author JenSuper
  * @version V1.0
  * @description: 统计词频
  * @date 2020/01/08

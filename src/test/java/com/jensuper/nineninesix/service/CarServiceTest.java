@@ -18,7 +18,7 @@ import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 /**
- * @author jichao
+ * @author JenSuper
  * @version V1.0
  * @description:
  * @date 2019/12/26
@@ -59,7 +59,7 @@ public class CarServiceTest {
 
     /** *
      * 自定义函数式编程方式
-     * @author jichao
+     * @author JenSuper
      * @param
      * @return void
      * @date 2019/12/27 11:26
