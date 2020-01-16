@@ -1,0 +1,9 @@
+jensuper:
+  common:
+    id: 1
+    msg: commonMsg
+  config:
+    url: jdbc:mysql://127.0.0.1:3306/mysql?useSSL=false&serverTimezone=GMT%2B8&tinyInt1isBit=false&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
+    msg: test
