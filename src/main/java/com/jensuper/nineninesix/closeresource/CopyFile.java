@@ -1,9 +1,11 @@
 package com.jensuper.nineninesix.closeresource;
 
+import lombok.Cleanup;
 import org.junit.Test;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 
 /**
@@ -38,4 +40,6 @@ public class CopyFile {
             e.printStackTrace();
         }
     }
+
+
 }

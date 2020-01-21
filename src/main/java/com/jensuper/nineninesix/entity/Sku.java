@@ -2,6 +2,8 @@ package com.jensuper.nineninesix.entity;
 
 import lombok.Data;
 
+import javax.validation.constraints.NotEmpty;
+
 /**
  * @author JenSuper
  * @version V1.0
@@ -12,8 +14,24 @@ import lombok.Data;
 public class Sku {
 
     /**
-     * 商品id
+     * 新增
      */
+    public interface saveSku {
+
+    }
+
+    /**
+     * 修改
+     */
+    public interface updSku {
+
+    }
+
+    /**
+     * 商品id
+     * 只有在修改的时候才会执行验证
+     */
+    @NotEmpty(message = "商品ID不能为空",groups = updSku.class)
     private Integer skuId;
     /**
      * 商品名称

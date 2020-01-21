@@ -1,12 +1,9 @@
 package com.jensuper.nineninesix.thread;
 
 
-import org.apache.tomcat.util.collections.SynchronizedQueue;
 import org.junit.Test;
 
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.SynchronousQueue;
+import java.util.concurrent.*;
 
 /**
  * @author jichao
@@ -17,9 +14,8 @@ import java.util.concurrent.SynchronousQueue;
 public class ThreadPoolTest {
 
     /**
-     * 线程池 三种队列 ：1. 有界队列 2. 无界队列 3. 同步位移队列
+     * 线程池 三种队列 ：1. 有界队列 2. 无界队列 3. 同步移交队列
      */
-
 
     /**
      * 基于数组：有界队列 队列容量为10
@@ -30,12 +26,13 @@ public class ThreadPoolTest {
 
         for (int i = 1; i < 20; i++) {
             queue.put(i);
-            System.out.println("queue 添加元素"+i);
+            System.out.println("queue 添加元素" + i);
         }
     }
 
     /**
      * 基于链表：有界队列 容量为10
+     *
      * @throws InterruptedException
      */
     @Test
@@ -44,12 +41,13 @@ public class ThreadPoolTest {
 
         for (int i = 1; i < 20; i++) {
             queue.put(i);
-            System.out.println("queue 添加元素"+i);
+            System.out.println("queue 添加元素" + i);
         }
     }
 
     /**
      * 基于链表：无界队列
+     *
      * @throws InterruptedException
      */
     @Test
@@ -58,28 +56,28 @@ public class ThreadPoolTest {
 
         for (int i = 1; i < 20; i++) {
             queue.put(i);
-            System.out.println("queue 添加元素"+i);
+            System.out.println("queue 添加元素" + i);
         }
     }
 
 
     /**
-     * 同步位移锁：一个生产线程，一个消费线程
+     * 同步移交队列：一个生产线程，一个消费线程
      */
     @Test
-    public void synchronousQueue(){
+    public void synchronousQueue() {
         SynchronousQueue<Integer> queue = new SynchronousQueue<>();
 
-        new Thread(()->{
-                try {
-                    queue.put(1);
-                    System.out.println("queue 添加元素");
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        new Thread(() -> {
+            try {
+                queue.put(1);
+                System.out.println("queue 添加元素");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }).start();
 
-        new Thread(()->{
+        new Thread(() -> {
             try {
                 queue.take();
                 System.out.println("queue 删除元素");
@@ -88,5 +86,44 @@ public class ThreadPoolTest {
             }
         }).start();
     }
+
+    /**
+     * 使用submit接收线程返回值
+     */
+    @Test
+    public void submitTest() throws ExecutionException, InterruptedException {
+        ExecutorService service = Executors.newCachedThreadPool();
+        Future<Integer> future = service.submit(() -> {
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return 2 + 2;
+        });
+        /**
+         * 只有接收到返回值才会执行
+         */
+        System.out.println(future.get());
+    }
+
+    /**
+     * excute 执行任务
+     */
+    @Test
+    public void executeTest() throws InterruptedException {
+        ExecutorService service = Executors.newCachedThreadPool();
+        service.execute(() -> {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            int a = 2 + 2;
+            System.out.println("执行结果" + a);
+        });
+        Thread.sleep(2000);
+    }
+
 
 }
